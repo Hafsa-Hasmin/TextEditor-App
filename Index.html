@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Text Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="editor-container">
+    <div class="toolbar">
+      <button onclick="format('bold')" title="Bold"><b>B</b></button>
+      <button onclick="format('italic')" title="Italic"><i>I</i></button>
+      <button onclick="format('underline')" title="Underline"><u>U</u></button>
+      <input type="color" id="colorPicker" title="Font Color" onchange="changeColor(this.value)">
+      <select onchange="alignText(this.value)" title="Text Alignment">
+        <option value="left">Left</option>
+        <option value="center">Center</option>
+        <option value="right">Right</option>
+        <option value="justify">Justify</option>
+      </select>
+      <button onclick="undo()" title="Undo">⎌ Undo</button>
+      <button onclick="redo()" title="Redo">⎌ Redo</button>
+    </div>
+
+    <div id="editor" contenteditable="true">
+      Start typing here...
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
